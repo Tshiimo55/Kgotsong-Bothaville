@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved — Kgotsong Bothaville Connect</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg" />
+  <style>
+    .form-card { background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem; }
+    .form-group { margin-bottom:1.4rem; }
+    .form-group label { display:block;font-size:0.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.5rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%;background:var(--deep);border:1px solid var(--border);border-radius:8px;
+      padding:0.8rem 1rem;color:var(--text);font-family:'Mulish',sans-serif;font-size:0.95rem;outline:none;transition:var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim); }
+    .form-group textarea { resize:vertical;min-height:110px; }
+    .form-row { display:grid;grid-template-columns:1fr 1fr;gap:1.25rem; }
+    .upload-box {
+      border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;cursor:pointer;transition:var(--transition);
+    }
+    .upload-box:hover { border-color:var(--gold);background:var(--gold-dim); }
+    .upload-box input { display:none; }
+    .tabs { display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:2.5rem; }
+    .tab-btn { padding:0.9rem 1.5rem;background:none;border:none;color:var(--muted);font-family:'Mulish',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:var(--transition);border-bottom:2px solid transparent;margin-bottom:-2px; }
+    .tab-btn.active { color:var(--gold);border-bottom-color:var(--gold); }
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+    @media(max-width:600px){ .form-row { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <section class="hero" style="padding:70px 0 50px;text-align:center">
+    <div class="container">
+      <span class="tag tag-gold">Community Support</span>
+      <h1 style="margin-top:1rem">Get <span style="color:var(--gold)">Involved</span></h1>
+      <div class="gold-line"></div>
+      <p style="max-width:560px;margin:1rem auto 0;font-size:1.05rem">
+        Submit your business, partner with us, or show your support for the Kgotsong community.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:780px">
+
+      <!-- Tabs -->
+      <div class="tabs fade-up">
+        <button class="tab-btn active" onclick="openTab('business', this)">Submit Your Business</button>
+        <button class="tab-btn" onclick="openTab('partner', this)">Partner With Us</button>
+        <button class="tab-btn" onclick="openTab('opportunity', this)">Post Opportunity</button>
+        <button class="tab-btn" onclick="openTab('contact', this)">Contact Us</button>
+      </div>
+
+      <!-- ── TAB 1: SUBMIT BUSINESS ── -->
+      <div id="tab-business" class="tab-content active fade-up">
+        <div class="form-card">
+          <h3 style="margin-bottom:0.5rem">Submit Your Business</h3>
+          <p style="margin-bottom:2rem;font-size:0.93rem">Get your business listed in our community directory. It's free for local Kgotsong businesses.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Owner / Contact Name *</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="e.g. 081 212 0921" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Business Name *</label>
+            <input type="text" placeholder="Your business name" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Business Category *</label>
+              <select>
+                <option value="">Select a category...</option>
+                <option>Bakery / Food</option>
+                <option>Clothing / Apparel</option>
+                <option>Car Wash / Auto</option>
+                <option>Catering</option>
+                <option>Health & Wellness</option>
+                <option>Education</option>
+                <option>Retail</option>
+                <option>Services</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" placeholder="e.g. Kgotsong, Bothaville" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>What support / service do you offer?</label>
+            <textarea placeholder="Describe what your business does and how it helps the community..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Business Logo / Photo</label>
+            <label class="upload-box" for="logoUpload">
+              <input type="file" id="logoUpload" accept="image/*" onchange="handleFileUpload(this)" />
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" style="margin:0 auto 0.75rem;display:block"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <p id="upload-label" style="font-size:0.9rem;margin:0">Click to upload logo or photo<br><small style="color:var(--muted)">JPG, PNG up to 5MB</small></p>
+            </label>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem" onclick="submitForm('business')">
+            Submit Business Listing →
+          </button>
+        </div>
+      </div>
+
+      <!-- ── TAB 2: PARTNER ── -->
+      <div id="tab-partner" class="tab-content fade-up">
+        <div class="form-card">
+          <h3 style="margin-bottom:0.5rem">Partner With Us</h3>
+          <p style="margin-bottom:2rem;font-size:0.93rem">Support the Kgotsong community as a business partner and be featured on our platform.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organisation Name *</label>
+              <input type="text" placeholder="Organisation name" />
+            </div>
+            <div class="form-group">
+              <label>Contact Person *</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" placeholder="Contact number" />
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="email@company.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>How would you like to partner with us?</label>
+            <textarea placeholder="Describe the support or partnership you are offering..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm('partner')">Submit Partnership Request →</button>
+        </div>
+      </div>
+
+      <!-- ── TAB 3: OPPORTUNITY ── -->
+      <div id="tab-opportunity" class="tab-content fade-up">
+        <div class="form-card">
+          <h3 style="margin-bottom:0.5rem">Post a Community Opportunity</h3>
+          <p style="margin-bottom:2rem;font-size:0.93rem">Share a job, training programme, bursary or community project with Kgotsong.</p>
+          <div class="form-group">
+            <label>Opportunity Title *</label>
+            <input type="text" placeholder="e.g. Part-time Baker Needed" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Type</label>
+              <select>
+                <option>Job Opportunity</option>
+                <option>Volunteer Role</option>
+                <option>Training Programme</option>
+                <option>Bursary / Scholarship</option>
+                <option>Community Project</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Organisation / Name *</label>
+              <input type="text" placeholder="Who is posting this" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description *</label>
+            <textarea placeholder="Full details about the opportunity..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Contact Email *</label>
+              <input type="email" placeholder="contact@org.com" />
+            </div>
+            <div class="form-group">
+              <label>Deadline (if any)</label>
+              <input type="date" />
+            </div>
+          </div>
+          <button class="btn btn-green" style="width:100%;justify-content:center" onclick="submitForm('opportunity')">Post Opportunity →</button>
+        </div>
+      </div>
+
+      <!-- ── TAB 4: CONTACT ── -->
+      <div id="tab-contact" class="tab-content fade-up">
+        <div class="form-card">
+          <h3 style="margin-bottom:0.5rem">Contact Us</h3>
+          <p style="margin-bottom:1.5rem;font-size:0.93rem">Reach out to the Kgotsong Bothaville Connect team.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem" class="contact-info-grid">
+            <div class="card" style="padding:1.2rem;text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.4rem">📞</div>
+              <h4 style="font-size:0.9rem;color:var(--muted)">Phone</h4>
+              <a href="tel:0812120921" style="font-weight:700;color:var(--gold)">081 212 0921</a>
+            </div>
+            <div class="card" style="padding:1.2rem;text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.4rem">✉️</div>
+              <h4 style="font-size:0.9rem;color:var(--muted)">Email</h4>
+              <a href="mailto:pkoekoe@gmail.com" style="font-weight:700;color:var(--gold)">pkoekoe@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="email@example.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="What is this about?" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your message..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm('contact')">Send Message →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function openTab(tabName, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabName).classList.add('active');
+      btn.classList.add('active');
+    }
+    function handleFileUpload(input) {
+      if (input.files && input.files[0]) {
+        document.getElementById('upload-label').innerHTML = '✅ ' + input.files[0].name;
+      }
+    }
+    function submitForm(type) {
+      const msgs = {
+        business: 'Thank you! Your business has been submitted. We will review and add it to the directory shortly.',
+        partner: 'Thank you for your partnership interest! We will be in touch soon.',
+        opportunity: 'Thank you! Your opportunity has been submitted for review.',
+        contact: 'Thank you for your message! We will respond within 2 business days.'
+      };
+      alert(msgs[type]);
+    }
+  </script>
+  <style>@media(max-width:600px){.contact-info-grid{grid-template-columns:1fr !important;}.tabs{flex-wrap:wrap;}.tab-btn{font-size:0.82rem;padding:0.7rem 0.9rem;}}</style>
+</body>
+</html>
