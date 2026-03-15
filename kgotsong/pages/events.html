@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Kgotsong Bothaville Connect</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg" />
+  <style>
+    .event-detail { display:flex;gap:0.75rem;align-items:flex-start;margin-bottom:0.6rem; }
+    .event-detail svg { flex-shrink:0;margin-top:2px; }
+    .event-detail span { font-size:0.93rem;color:var(--muted); }
+    .event-detail strong { color:var(--text); }
+    .registration-form { background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem; }
+    .form-group { margin-bottom:1.25rem; }
+    .form-group label { display:block;font-size:0.85rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem; }
+    .form-group input, .form-group select, .form-group textarea { width:100%;background:var(--deep);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;color:var(--text);font-family:'Mulish',sans-serif;font-size:0.95rem;outline:none;transition:var(--transition); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--gold); }
+    .form-group textarea { resize:vertical;min-height:100px; }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HERO -->
+  <section class="hero" style="padding:70px 0 50px;text-align:center">
+    <div class="container">
+      <span class="tag tag-green">Upcoming Events</span>
+      <h1 style="margin-top:1rem">Community <span style="color:var(--gold)">Events</span></h1>
+      <div class="gold-line"></div>
+      <p style="max-width:560px;margin:1rem auto 0;font-size:1.05rem">
+        Join us for events that bring Kgotsong together — from fun runs to community markets and sports days.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ NALA FUN RUN ═══ -->
+  <section class="section" id="nala-fun-run">
+    <div class="container">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start" class="event-grid">
+
+        <!-- Event Image -->
+        <div class="fade-up">
+          <div class="img-placeholder" style="width:100%;height:380px;border-radius:var(--radius)">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+            <span>Nala Fun Run — Event Banner</span>
+          </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="fade-up">
+          <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:1.5rem">
+            <span class="tag tag-green">Fun Run</span>
+            <span class="tag tag-gold">Flagship Event</span>
+          </div>
+          <h2>Nala Fun Run</h2>
+          <p style="margin-top:1rem;font-size:1.05rem;color:var(--text);line-height:1.8">
+            The Nala Fun Run is Kgotsong's premier community running event, bringing together participants of all ages and fitness levels. Whether you run, jog or walk — everyone is welcome. This is about unity, health and community pride.
+          </p>
+
+          <div class="card" style="padding:1.5rem;margin-top:1.5rem">
+            <h4 style="color:var(--gold);font-family:'Mulish',sans-serif;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.2rem">Event Details</h4>
+            <div class="event-detail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span><strong>Date:</strong> To Be Announced — 2026</span>
+            </div>
+            <div class="event-detail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span><strong>Starting Point:</strong> Kgotsong Community Grounds (TBC)</span>
+            </div>
+            <div class="event-detail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              <span><strong>Open to:</strong> All ages, all fitness levels</span>
+            </div>
+            <div class="event-detail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span><strong>Time:</strong> Morning start (TBC)</span>
+            </div>
+          </div>
+
+          <!-- Ways to get involved -->
+          <div style="margin-top:1.5rem">
+            <h4 style="color:var(--white);margin-bottom:1rem">Ways to Get Involved</h4>
+            <div class="grid-2" style="gap:0.75rem">
+              <div class="card" style="padding:1.1rem;text-align:center;border-color:var(--green)">
+                <div style="font-size:1.5rem;margin-bottom:0.25rem">🏃</div>
+                <h4 style="font-size:0.9rem;color:var(--text)">Register to Run</h4>
+                <p style="font-size:0.8rem">Join as a participant</p>
+              </div>
+              <div class="card" style="padding:1.1rem;text-align:center;border-color:var(--gold)">
+                <div style="font-size:1.5rem;margin-bottom:0.25rem">🤝</div>
+                <h4 style="font-size:0.9rem;color:var(--text)">Volunteer</h4>
+                <p style="font-size:0.8rem">Help make it happen</p>
+              </div>
+              <div class="card" style="padding:1.1rem;text-align:center;border-color:var(--gold)">
+                <div style="font-size:1.5rem;margin-bottom:0.25rem">🏆</div>
+                <h4 style="font-size:0.9rem;color:var(--text)">Sponsorship</h4>
+                <p style="font-size:0.8rem">Support the event</p>
+              </div>
+              <div class="card" style="padding:1.1rem;text-align:center;border-color:var(--green)">
+                <div style="font-size:1.5rem;margin-bottom:0.25rem">💚</div>
+                <h4 style="font-size:0.9rem;color:var(--text)">Donate</h4>
+                <p style="font-size:0.8rem">Contribute to the cause</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div style="max-width:600px;margin:4rem auto 0" class="fade-up">
+        <h3 style="text-align:center;margin-bottom:0.5rem">Register Your Interest</h3>
+        <p style="text-align:center;margin-bottom:2rem">Be the first to know when registration opens officially.</p>
+
+        <div class="registration-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="e.g. 081 234 5678" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>I want to</label>
+            <select>
+              <option>Participate in the run</option>
+              <option>Volunteer</option>
+              <option>Sponsor the event</option>
+              <option>Make a donation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message (optional)</label>
+            <textarea placeholder="Any questions or notes..."></textarea>
+          </div>
+          <button class="btn btn-green" style="width:100%;justify-content:center" onclick="alert('Thank you! We will be in touch soon.')">
+            Submit Interest
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FUTURE EVENTS ═══ -->
+  <section class="section" style="background:var(--deep)">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag tag-gold">Coming Soon</span>
+        <h2 style="margin-top:1rem">More Events on the Way</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card fade-up" style="padding:1.5rem;text-align:center;opacity:0.65">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem">⚽</div>
+          <h3>Sports Events</h3>
+          <p style="font-size:0.9rem;margin-top:0.5rem">Community sports days and tournaments for all ages.</p>
+          <span style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;display:block">⏳ Coming Soon</span>
+        </div>
+        <div class="card fade-up" style="padding:1.5rem;text-align:center;opacity:0.65">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem">🛍️</div>
+          <h3>Community Markets</h3>
+          <p style="font-size:0.9rem;margin-top:0.5rem">A marketplace for local vendors, crafts and produce.</p>
+          <span style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;display:block">⏳ Coming Soon</span>
+        </div>
+        <div class="card fade-up" style="padding:1.5rem;text-align:center;opacity:0.65">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem">🎯</div>
+          <h3>Youth Activities</h3>
+          <p style="font-size:0.9rem;margin-top:0.5rem">Programs designed to engage and empower Kgotsong youth.</p>
+          <span style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;display:block">⏳ Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js"></script>
+  <style>@media(max-width:768px){.event-grid{grid-template-columns:1fr !important;}}</style>
+</body>
+</html>
