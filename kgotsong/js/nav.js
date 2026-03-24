@@ -4,8 +4,8 @@ const NAV_HTML = `
 <header>
   <nav>
     <a href="../index.html" class="nav-logo">
-      <img src="../images/logo.jpeg" alt="Kgotsong Bothaville Connect Logo" onerror="this.style.display='none'">
-      <span>Kgotsong<br><small style="font-size:0.65rem;color:var(--gold);font-family:'Mulish',sans-serif;letter-spacing:0.08em;text-transform:uppercase">Bothaville Connect</small></span>
+      <img src="../images/Nala Municipality Logo.jpeg" alt="Kgotsong Bothaville Connect Logo" onerror="this.style.display='none'">
+      <span>Kgotsong<br><small style="font-size:0.65rem;color:var(--white);font-family:'Mulish',sans-serif;letter-spacing:0.08em;text-transform:uppercase">Bothaville Connect</small></span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="../index.html">Home</a></li>
@@ -26,8 +26,8 @@ const FOOTER_HTML = `
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../images/logo.jpeg" alt="Logo" onerror="this.style.display='none'">
-        <h3 style="font-size:1.1rem;margin-bottom:0.5rem">Kgotsong Bothaville Connect</h3>
+        <img src="../images/Nala Municipality Logo.jpeg" alt="Logo" onerror="this.style.display='none'">
+        <h3 style="font-size:1.1rem;margin-bottom:0.5rem;color:var(--white)">Kgotsong Bothaville Connect</h3>
         <p>A digital platform sharing local businesses, community initiatives and opportunities. Est. 2026.</p>
       </div>
       <div class="footer-col">
@@ -43,10 +43,10 @@ const FOOTER_HTML = `
       <div class="footer-col">
         <h4>Community</h4>
         <ul>
-          <li><a href="../pages/support.html">Submit Your Business</a></li>
-          <li><a href="../pages/support.html">Partner With Us</a></li>
-          <li><a href="../pages/events.html">Volunteer</a></li>
-          <li><a href="../pages/events.html">Donate</a></li>
+          <li><a href="../pages/support.html?tab=business">Submit Your Business</a></li>
+          <li><a href="../pages/support.html?tab=partner">Partner With Us</a></li>
+          <li><a href="../pages/events.html?interest=Volunteer#register-interest">Volunteer</a></li>
+          <li><a href="../pages/events.html?interest=Make%20a%20donation#register-interest">Donate</a></li>
         </ul>
       </div>
       <div class="footer-col">

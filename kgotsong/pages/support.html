@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Involved — Kgotsong Bothaville Connect</title>
+  <title>Get Involved - Kgotsong Bothaville Connect</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" type="image/jpeg" href="../images/logo.jpeg" />
+  <link rel="icon" type="image/jpeg" href="../images/Nala Municipality Logo.jpeg" />
   <style>
     .form-card { background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem; }
     .form-group { margin-bottom:1.4rem; }
-    .form-group label { display:block;font-size:0.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.5rem; }
+    .form-group label { display:block;font-size:0.82rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.5rem; }
     .form-group input, .form-group select, .form-group textarea {
-      width:100%;background:var(--deep);border:1px solid var(--border);border-radius:8px;
-      padding:0.8rem 1rem;color:var(--text);font-family:'Mulish',sans-serif;font-size:0.95rem;outline:none;transition:var(--transition);
+      width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.22);border-radius:8px;
+      padding:0.8rem 1rem;color:var(--white);font-family:'Mulish',sans-serif;font-size:0.95rem;outline:none;transition:var(--transition);
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim); }
     .form-group textarea { resize:vertical;min-height:110px; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color:rgba(255,255,255,0.72); }
+    .form-group select option { color:var(--text); background:var(--white); }
     .form-row { display:grid;grid-template-columns:1fr 1fr;gap:1.25rem; }
-    .upload-box {
-      border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;cursor:pointer;transition:var(--transition);
-    }
+    .upload-box { border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;cursor:pointer;transition:var(--transition); }
     .upload-box:hover { border-color:var(--gold);background:var(--gold-dim); }
     .upload-box input { display:none; }
     .tabs { display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:2.5rem; }
@@ -30,7 +30,7 @@
     @media(max-width:600px){ .form-row { grid-template-columns:1fr; } }
   </style>
 </head>
-<body>
+<body class="support-page">
 
   <div id="nav-placeholder"></div>
 
@@ -48,38 +48,37 @@
   <section class="section">
     <div class="container" style="max-width:780px">
 
-      <!-- Tabs -->
       <div class="tabs fade-up">
-        <button class="tab-btn active" onclick="openTab('business', this)">Submit Your Business</button>
-        <button class="tab-btn" onclick="openTab('partner', this)">Partner With Us</button>
-        <button class="tab-btn" onclick="openTab('opportunity', this)">Post Opportunity</button>
-        <button class="tab-btn" onclick="openTab('contact', this)">Contact Us</button>
+        <button class="tab-btn active" data-tab="business" onclick="openTab('business', this)">Submit Your Business</button>
+        <button class="tab-btn" data-tab="partner" onclick="openTab('partner', this)">Partner With Us</button>
+        <button class="tab-btn" data-tab="opportunity" onclick="openTab('opportunity', this)">Post Opportunity</button>
+        <button class="tab-btn" data-tab="contact" onclick="openTab('contact', this)">Contact Us</button>
       </div>
 
-      <!-- ── TAB 1: SUBMIT BUSINESS ── -->
       <div id="tab-business" class="tab-content active fade-up">
-        <div class="form-card">
+        <form class="form-card js-email-form" data-success-message="Thank you. Your business submission was sent to pkoekoe@gmail.com." enctype="multipart/form-data">
           <h3 style="margin-bottom:0.5rem">Submit Your Business</h3>
-          <p style="margin-bottom:2rem;font-size:0.93rem">Get your business listed in our community directory. It's free for local Kgotsong businesses.</p>
+          <p style="margin-bottom:2rem;font-size:0.93rem;color:var(--white)">Get your business listed in our community directory. It's free for local Kgotsong businesses.</p>
+          <input type="hidden" name="interest_type" value="Submit Your Business" />
 
           <div class="form-row">
             <div class="form-group">
               <label>Owner / Contact Name *</label>
-              <input type="text" placeholder="Full name" />
+              <input type="text" name="owner_name" placeholder="Full name" required />
             </div>
             <div class="form-group">
               <label>Phone Number *</label>
-              <input type="tel" placeholder="e.g. 081 212 0921" />
+              <input type="tel" name="phone" placeholder="e.g. 081 212 0921" required />
             </div>
           </div>
           <div class="form-group">
             <label>Business Name *</label>
-            <input type="text" placeholder="Your business name" />
+            <input type="text" name="business_name" placeholder="Your business name" required />
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Business Category *</label>
-              <select>
+              <select name="business_category" required>
                 <option value="">Select a category...</option>
                 <option>Bakery / Food</option>
                 <option>Clothing / Apparel</option>
@@ -94,77 +93,77 @@
             </div>
             <div class="form-group">
               <label>Location</label>
-              <input type="text" placeholder="e.g. Kgotsong, Bothaville" />
+              <input type="text" name="location" placeholder="e.g. Kgotsong, Bothaville" />
             </div>
           </div>
           <div class="form-group">
             <label>What support / service do you offer?</label>
-            <textarea placeholder="Describe what your business does and how it helps the community..."></textarea>
+            <textarea name="service_description" placeholder="Describe what your business does and how it helps the community..."></textarea>
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" />
+            <input type="email" name="email" placeholder="your@email.com" />
           </div>
           <div class="form-group">
             <label>Business Logo / Photo</label>
             <label class="upload-box" for="logoUpload">
-              <input type="file" id="logoUpload" accept="image/*" onchange="handleFileUpload(this)" />
+              <input type="file" id="logoUpload" name="attachment" accept="image/*" onchange="handleFileUpload(this)" />
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" style="margin:0 auto 0.75rem;display:block"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              <p id="upload-label" style="font-size:0.9rem;margin:0">Click to upload logo or photo<br><small style="color:var(--muted)">JPG, PNG up to 5MB</small></p>
+              <p id="upload-label" style="font-size:0.9rem;margin:0">Click to upload logo or photo<br><small style="color:rgba(255,255,255,0.72)">JPG, PNG up to 5MB</small></p>
             </label>
           </div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem" onclick="submitForm('business')">
-            Submit Business Listing →
-          </button>
-        </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem">Submit Business Listing →</button>
+          <div class="form-result" hidden></div>
+        </form>
       </div>
 
-      <!-- ── TAB 2: PARTNER ── -->
       <div id="tab-partner" class="tab-content fade-up">
-        <div class="form-card">
+        <form class="form-card js-email-form" data-success-message="Thank you. Your partnership request was sent to pkoekoe@gmail.com.">
           <h3 style="margin-bottom:0.5rem">Partner With Us</h3>
-          <p style="margin-bottom:2rem;font-size:0.93rem">Support the Kgotsong community as a business partner and be featured on our platform.</p>
+          <p style="margin-bottom:2rem;font-size:0.93rem;color:var(--white)">Support the Kgotsong community as a business partner and be featured on our platform.</p>
+          <input type="hidden" name="interest_type" value="Partner With Us" />
           <div class="form-row">
             <div class="form-group">
               <label>Organisation Name *</label>
-              <input type="text" placeholder="Organisation name" />
+              <input type="text" name="organisation_name" placeholder="Organisation name" required />
             </div>
             <div class="form-group">
               <label>Contact Person *</label>
-              <input type="text" placeholder="Full name" />
+              <input type="text" name="contact_person" placeholder="Full name" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Phone *</label>
-              <input type="tel" placeholder="Contact number" />
+              <input type="tel" name="phone" placeholder="Contact number" required />
             </div>
             <div class="form-group">
               <label>Email *</label>
-              <input type="email" placeholder="email@company.com" />
+              <input type="email" name="email" placeholder="email@company.com" required />
             </div>
           </div>
           <div class="form-group">
             <label>How would you like to partner with us?</label>
-            <textarea placeholder="Describe the support or partnership you are offering..."></textarea>
+            <textarea name="partnership_details" placeholder="Describe the support or partnership you are offering..."></textarea>
           </div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm('partner')">Submit Partnership Request →</button>
-        </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit Partnership Request →</button>
+          <div class="form-result" hidden></div>
+        </form>
       </div>
 
-      <!-- ── TAB 3: OPPORTUNITY ── -->
       <div id="tab-opportunity" class="tab-content fade-up">
-        <div class="form-card">
+        <form class="form-card js-email-form" data-success-message="Thank you. Your opportunity was sent to pkoekoe@gmail.com.">
           <h3 style="margin-bottom:0.5rem">Post a Community Opportunity</h3>
-          <p style="margin-bottom:2rem;font-size:0.93rem">Share a job, training programme, bursary or community project with Kgotsong.</p>
+          <p style="margin-bottom:2rem;font-size:0.93rem;color:var(--white)">Share a job, training programme, bursary or community project with Kgotsong.</p>
+          <input type="hidden" name="interest_type" value="Post Opportunity" />
           <div class="form-group">
             <label>Opportunity Title *</label>
-            <input type="text" placeholder="e.g. Part-time Baker Needed" />
+            <input type="text" name="opportunity_title" placeholder="e.g. Part-time Baker Needed" required />
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Type</label>
-              <select>
+              <select name="opportunity_type">
                 <option>Job Opportunity</option>
                 <option>Volunteer Role</option>
                 <option>Training Programme</option>
@@ -174,66 +173,68 @@
             </div>
             <div class="form-group">
               <label>Organisation / Name *</label>
-              <input type="text" placeholder="Who is posting this" />
+              <input type="text" name="organisation_name" placeholder="Who is posting this" required />
             </div>
           </div>
           <div class="form-group">
             <label>Description *</label>
-            <textarea placeholder="Full details about the opportunity..."></textarea>
+            <textarea name="description" placeholder="Full details about the opportunity..." required></textarea>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Contact Email *</label>
-              <input type="email" placeholder="contact@org.com" />
+              <input type="email" name="email" placeholder="contact@org.com" required />
             </div>
             <div class="form-group">
               <label>Deadline (if any)</label>
-              <input type="date" />
+              <input type="date" name="deadline" />
             </div>
           </div>
-          <button class="btn btn-green" style="width:100%;justify-content:center" onclick="submitForm('opportunity')">Post Opportunity →</button>
-        </div>
+          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center">Post Opportunity →</button>
+          <div class="form-result" hidden></div>
+        </form>
       </div>
 
-      <!-- ── TAB 4: CONTACT ── -->
       <div id="tab-contact" class="tab-content fade-up">
-        <div class="form-card">
+        <form class="form-card js-email-form" data-success-message="Thank you. Your message was sent to pkoekoe@gmail.com.">
           <h3 style="margin-bottom:0.5rem">Contact Us</h3>
-          <p style="margin-bottom:1.5rem;font-size:0.93rem">Reach out to the Kgotsong Bothaville Connect team.</p>
+          <p style="margin-bottom:1.5rem;font-size:0.93rem;color:var(--white)">Reach out to the Kgotsong Bothaville Connect team.</p>
+          <input type="hidden" name="interest_type" value="Contact Us" />
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem" class="contact-info-grid">
             <div class="card" style="padding:1.2rem;text-align:center">
               <div style="font-size:1.5rem;margin-bottom:0.4rem">📞</div>
-              <h4 style="font-size:0.9rem;color:var(--muted)">Phone</h4>
-              <a href="tel:0812120921" style="font-weight:700;color:var(--gold)">081 212 0921</a>
+              <h4 style="font-size:0.9rem;color:var(--white)">Phone</h4>
+              <a href="tel:0812120921" style="font-weight:700;color:var(--white)">081 212 0921</a>
             </div>
             <div class="card" style="padding:1.2rem;text-align:center">
               <div style="font-size:1.5rem;margin-bottom:0.4rem">✉️</div>
-              <h4 style="font-size:0.9rem;color:var(--muted)">Email</h4>
-              <a href="mailto:pkoekoe@gmail.com" style="font-weight:700;color:var(--gold)">pkoekoe@gmail.com</a>
+              <h4 style="font-size:0.9rem;color:var(--white)">Email</h4>
+              <a href="mailto:pkoekoe@gmail.com" style="font-weight:700;color:var(--white)">pkoekoe@gmail.com</a>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label>Your Name</label>
-              <input type="text" placeholder="Full name" />
+              <input type="text" name="name" placeholder="Full name" required />
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" placeholder="email@example.com" />
+              <input type="email" name="email" placeholder="email@example.com" required />
             </div>
           </div>
           <div class="form-group">
             <label>Subject</label>
-            <input type="text" placeholder="What is this about?" />
+            <input type="text" name="subject_line" placeholder="What is this about?" required />
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea placeholder="Your message..."></textarea>
+            <textarea name="message" placeholder="Your message..." required></textarea>
           </div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm('contact')">Send Message →</button>
-        </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message →</button>
+          <div class="form-result" hidden></div>
+        </form>
       </div>
 
     </div>
@@ -242,26 +243,19 @@
   <div id="footer-placeholder"></div>
   <script src="../js/nav.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/forms.js"></script>
   <script>
     function openTab(tabName, btn) {
-      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach((tab) => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach((tabButton) => tabButton.classList.remove('active'));
       document.getElementById('tab-' + tabName).classList.add('active');
       btn.classList.add('active');
     }
+
     function handleFileUpload(input) {
       if (input.files && input.files[0]) {
-        document.getElementById('upload-label').innerHTML = '✅ ' + input.files[0].name;
+        document.getElementById('upload-label').innerHTML = 'Selected: ' + input.files[0].name;
       }
-    }
-    function submitForm(type) {
-      const msgs = {
-        business: 'Thank you! Your business has been submitted. We will review and add it to the directory shortly.',
-        partner: 'Thank you for your partnership interest! We will be in touch soon.',
-        opportunity: 'Thank you! Your opportunity has been submitted for review.',
-        contact: 'Thank you for your message! We will respond within 2 business days.'
-      };
-      alert(msgs[type]);
     }
   </script>
   <style>@media(max-width:600px){.contact-info-grid{grid-template-columns:1fr !important;}.tabs{flex-wrap:wrap;}.tab-btn{font-size:0.82rem;padding:0.7rem 0.9rem;}}</style>
